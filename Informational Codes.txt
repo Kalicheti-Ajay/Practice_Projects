@@ -1,0 +1,12 @@
+Informational Codes: 100 - 199
+Succesful codes: 200 - 299
+Redirect Codes: 300 - 399
+Erros Codes: 400 - 499
+Server Codes: 500 - 599
+
+
+1xx Informational: Request received, continuing process.
+2xx Success: Action successfully received and accepted.
+3xx Redirection: Further action needed, often URL redirection.
+4xx Client Error: Request contains bad syntax or cannot be fulfilled.
+5xx Server Error: Server failed to fulfill a valid request.

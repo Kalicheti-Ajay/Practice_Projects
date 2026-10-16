@@ -1,0 +1,14 @@
+Promice.all()
+
+Promice.allSettled()
+
+Promice.race()
+
+iterator()
+
+obj isinstanceof() class or not
+
+ checking the obj is isinstanceof claas in a ApiError response
+
+
+ 

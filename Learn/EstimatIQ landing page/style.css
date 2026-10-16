@@ -1,0 +1,601 @@
+/* ================================================
+   CUSTOM PROPERTIES
+   ================================================ */
+:root {
+  /* Colors */
+  --color-bg:         #ffffff;
+  --color-bg-alt:     #f0f7ff;
+  --color-primary:    #1a2b4a;
+  --color-accent:     #0ea5e9;
+  --color-accent-dk:  #0284c7;
+  --color-text:       #1f2937;
+  --color-muted:      #6b7280;
+  --color-border:     #dde4ef;
+  --color-white:      #ffffff;
+  --color-code-bg:    #1e2d40;
+  --color-code-text:  #a8d8f0;
+
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+               sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+
+  /* Spacing & shape */
+  --radius:     8px;
+  --shadow:     0 2px 8px rgba(0, 0, 0, 0.08);
+  --max-width:  1100px;
+}
+
+
+/* ================================================
+   RESET & BASE
+   ================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ================================================
+   LAYOUT UTILITIES
+   ================================================ */
+
+/* Centered max-width container */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Section spacing */
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Alternating background */
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+/* Shared section heading */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Sub-headings inside sections (h3 used as section sub-titles) */
+.subsection-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+
+/* ================================================
+   HEADER
+   ================================================ */
+header {
+  background-color: var(--color-primary);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  flex: 1;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-list a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+
+/* ================================================
+   BUTTONS
+   ================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dk);
+  border-color: var(--color-accent-dk);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+
+/* ================================================
+   HERO
+   ================================================ */
+.hero {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 2rem;
+}
+
+
+/* ================================================
+   ABOUT
+   ================================================ */
+#about p {
+  margin-bottom: 1rem;
+}
+
+.about-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* VP of Sales blockquote */
+.pull-quote {
+  border-left: 4px solid var(--color-accent);
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-bg-alt);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-top: 2rem;
+}
+
+.pull-quote p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+}
+
+
+/* ================================================
+   ATTRIBUTION (used inside blockquotes)
+   ================================================ */
+.attribution {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  font-style: normal;
+  margin-bottom: 0;
+}
+
+
+/* ================================================
+   HOW IT WORKS
+   ================================================ */
+.steps-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  height: 3rem;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.step-body h3 {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+
+/* ================================================
+   CARD (shared base — features & pricing)
+   ================================================ */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+}
+
+
+/* ================================================
+   FEATURE CARD GRID
+   ================================================ */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+/* Each card takes roughly one-third width, min 240px */
+.card-grid .card {
+  flex: 1 1 calc(33.333% - 1.5rem);
+  min-width: 240px;
+}
+
+
+/* ================================================
+   SAMPLE API RESPONSE
+   ================================================ */
+#api-sample p {
+  margin-bottom: 1.25rem;
+}
+
+pre {
+  background-color: var(--color-code-bg);
+  color: var(--color-code-text);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+
+/* ================================================
+   PRICING CARDS
+   ================================================ */
+.pricing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pricing-card {
+  flex: 1 1 280px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Highlighted / featured plan */
+.pricing-featured {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.18);
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.price-period {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+/* Feature checklist inside pricing cards */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+}
+
+.feature-list li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.94rem;
+}
+
+.feature-list li::before {
+  content: "✓  ";
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Make CTA button full-width inside a pricing card */
+.pricing-card .btn {
+  text-align: center;
+  width: 100%;
+}
+
+
+/* ================================================
+   TESTIMONIALS
+   ================================================ */
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.testimonial {
+  flex: 1 1 280px;
+  background-color: var(--color-white);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.testimonial p {
+  font-style: italic;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+
+/* ================================================
+   FAQ
+   ================================================ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.faq-list dt {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.faq-list dd {
+  margin-left: 0;
+  line-height: 1.75;
+}
+
+
+/* ================================================
+   CONTACT FORM
+   ================================================ */
+.form-intro {
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+/* ================================================
+   FOOTER
+   ================================================ */
+footer {
+  background-color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.65);
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand address {
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer-brand a {
+  color: var(--color-accent);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+}

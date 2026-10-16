@@ -1,0 +1,179 @@
+// ==========================================
+// Task 7 - Trick Questions
+// ==========================================
+
+
+/*
+==================================================
+1.
+==================================================
+
+Q:
+If you destructure { a, b } from an object that
+is null or undefined, what happens?
+
+Answer:
+
+It throws a TypeError because JavaScript cannot
+destructure properties from null or undefined.
+
+Example:
+
+const { a, b } = null;
+// TypeError
+
+Safe way:
+
+const obj = null;
+
+const { a, b } = obj || {};
+
+Using || {} provides an empty object if obj is
+null or undefined, preventing the error.
+*/
+
+
+/*
+==================================================
+2.
+==================================================
+
+Q:
+Does Array.prototype.map() skip holes in a sparse
+array the same way forEach() does?
+
+Answer:
+
+Yes.
+
+Both map() and forEach() skip empty slots (holes)
+in sparse arrays.
+
+One method that does NOT skip holes:
+
+Array.prototype.keys()
+
+Example:
+
+const arr = [1, , 3];
+
+console.log([...arr.keys()]);
+
+Output:
+
+[0, 1, 2]
+
+keys() includes every index, even if the element
+is missing.
+*/
+
+
+/*
+==================================================
+3.
+==================================================
+
+Q:
+What happens when calling:
+
+[10, 2, 33, 4].sort()
+
+without a comparator?
+
+Answer:
+
+Output:
+
+[10, 2, 33, 4]
+
+Explanation:
+
+sort() converts elements to strings and compares
+them lexicographically (dictionary order), not
+numerically.
+
+Comparison:
+
+"10"
+"2"
+"33"
+"4"
+
+Dictionary order is:
+
+10
+2
+33
+4
+
+Correct numeric sort:
+
+[10, 2, 33, 4].sort((a, b) => a - b);
+
+Output:
+
+[2, 4, 10, 33]
+*/
+
+
+/*
+==================================================
+4.
+==================================================
+
+Q:
+Can you skip elements during array destructuring?
+
+Answer:
+
+Yes.
+
+Example:
+
+const [first, , third] = [10, 20, 30];
+
+Result:
+
+first = 10
+third = 30
+
+The extra comma skips the second element.
+*/
+
+
+/*
+==================================================
+5.
+==================================================
+
+Q:
+Can includes() find NaN when indexOf() cannot?
+
+Answer:
+
+Yes.
+
+Example:
+
+const arr = [1, NaN, 3];
+
+arr.includes(NaN);   // true
+
+arr.indexOf(NaN);    // -1
+
+Reason:
+
+includes() uses SameValueZero comparison,
+which considers NaN equal to NaN.
+
+indexOf() uses strict equality (===),
+and in JavaScript:
+
+NaN !== NaN
+
+Therefore, indexOf() cannot find NaN,
+while includes() can.
+*/
+
+
+console.log("answers.js completed successfully.");

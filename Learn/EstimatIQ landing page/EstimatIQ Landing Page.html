@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EstimatIQ — Smart Estimates. Faster Deals.</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #1a2b4a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #1a2b4a; z-index: 9999; }
+    #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
+    #__bundler_placeholder { color: #999; font-size: 14px; }
+  </style>
+  <noscript>
+    <style>#__bundler_loading { display: none; }</style>
+    <div style="position:fixed;bottom:12px;left:12px;font:13px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;color:#999;background:rgba(255,255,255,0.9);padding:6px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.08);z-index:10000;">
+      This page requires JavaScript to display.
+    </div>
+  </noscript>
+</head>
+<body>
+  <div id="__bundler_thumbnail">
+    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- Header bar -->
+      <rect width="800" height="54" fill="#14223a"></rect>
+      <rect x="28" y="18" width="110" height="18" rx="4" fill="#ffffff" opacity="0.9"></rect>
+      <rect x="540" y="20" width="48" height="14" rx="3" fill="#ffffff" opacity="0.3"></rect>
+      <rect x="600" y="20" width="52" height="14" rx="3" fill="#ffffff" opacity="0.3"></rect>
+      <rect x="664" y="20" width="44" height="14" rx="3" fill="#ffffff" opacity="0.3"></rect>
+      <rect x="718" y="20" width="58" height="14" rx="3" fill="#ffffff" opacity="0.3"></rect>
+      <!-- Hero -->
+      <rect y="54" width="800" height="200" fill="#1a2b4a"></rect>
+      <rect x="160" y="90" width="480" height="28" rx="5" fill="#ffffff" opacity="0.85"></rect>
+      <rect x="220" y="130" width="360" height="14" rx="3" fill="#ffffff" opacity="0.45"></rect>
+      <rect x="260" y="152" width="280" height="14" rx="3" fill="#ffffff" opacity="0.45"></rect>
+      <rect x="300" y="188" width="200" height="36" rx="6" fill="#0ea5e9"></rect>
+      <!-- Feature cards -->
+      <rect y="254" width="800" height="246" fill="#f0f7ff"></rect>
+      <rect x="28" y="278" width="228" height="110" rx="7" fill="#fff" stroke="#dde4ef" stroke-width="1"></rect>
+      <rect x="44" y="298" width="120" height="12" rx="3" fill="#1a2b4a" opacity="0.7"></rect>
+      <rect x="44" y="318" width="190" height="9" rx="3" fill="#6b7280" opacity="0.5"></rect>
+      <rect x="44" y="334" width="160" height="9" rx="3" fill="#6b7280" opacity="0.4"></rect>
+      <rect x="286" y="278" width="228" height="110" rx="7" fill="#fff" stroke="#dde4ef" stroke-width="1"></rect>
+      <rect x="302" y="298" width="140" height="12" rx="3" fill="#1a2b4a" opacity="0.7"></rect>
+      <rect x="302" y="318" width="190" height="9" rx="3" fill="#6b7280" opacity="0.5"></rect>
+      <rect x="302" y="334" width="160" height="9" rx="3" fill="#6b7280" opacity="0.4"></rect>
+      <rect x="544" y="278" width="228" height="110" rx="7" fill="#fff" stroke="#0ea5e9" stroke-width="1.5"></rect>
+      <rect x="560" y="278" width="64" height="18" rx="9" fill="#0ea5e9"></rect>
+      <rect x="560" y="306" width="140" height="12" rx="3" fill="#1a2b4a" opacity="0.7"></rect>
+      <rect x="560" y="326" width="190" height="9" rx="3" fill="#6b7280" opacity="0.5"></rect>
+      <rect x="560" y="342" width="160" height="9" rx="3" fill="#6b7280" opacity="0.4"></rect>
+      <rect x="560" y="362" width="196" height="28" rx="5" fill="#0ea5e9"></rect>
+    </svg>
+  </div>
+  <div id="__bundler_loading">Unpacking...</div>
+
+  <script>
+    
+document.addEventListener('DOMContentLoaded', async function() {
+  const loading = document.getElementById('__bundler_loading');
+  function setStatus(msg) { if (loading) loading.textContent = msg; }
+
+  // Error sink persists across replaceWith since it's on window, not the DOM.
+  window.addEventListener('error', function(e) {
+    var p = document.body || document.documentElement;
+    var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
+    d.id = '__bundler_err';
+    d.style.cssText = 'position:fixed;bottom:12px;left:12px;right:12px;font:12px/1.4 ui-monospace,monospace;background:#2a1215;color:#ff8a80;padding:10px 14px;border-radius:8px;border:1px solid #5c2b2e;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto';
+    d.textContent = (d.textContent ? d.textContent + String.fromCharCode(10) : '') +
+      '[bundle] ' + (e.message || e.type) +
+      (e.filename ? ' (' + e.filename.slice(0, 60) + ':' + e.lineno + ')' : '');
+  }, true);
+
+  try {
+    const manifestEl = document.querySelector('script[type="__bundler/manifest"]');
+    const templateEl = document.querySelector('script[type="__bundler/template"]');
+    if (!manifestEl || !templateEl) {
+      setStatus('Error: missing bundle data');
+      console.error('[bundler] Missing script tags — manifestEl:', !!manifestEl, 'templateEl:', !!templateEl);
+      return;
+    }
+
+    const manifest = JSON.parse(manifestEl.textContent);
+    let template = JSON.parse(templateEl.textContent);
+
+    const uuids = Object.keys(manifest);
+    setStatus('Unpacking ' + uuids.length + ' assets...');
+
+    const blobUrls = {};
+    await Promise.all(uuids.map(async (uuid) => {
+      const entry = manifest[uuid];
+      try {
+        const binaryStr = atob(entry.data);
+        const bytes = new Uint8Array(binaryStr.length);
+        for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
+
+        let finalBytes = bytes;
+        if (entry.compressed) {
+          if (typeof DecompressionStream !== 'undefined') {
+            const ds = new DecompressionStream('gzip');
+            const writer = ds.writable.getWriter();
+            const reader = ds.readable.getReader();
+            writer.write(bytes);
+            writer.close();
+            const chunks = [];
+            let totalLen = 0;
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              chunks.push(value);
+              totalLen += value.length;
+            }
+            finalBytes = new Uint8Array(totalLen);
+            let offset = 0;
+            for (const chunk of chunks) { finalBytes.set(chunk, offset); offset += chunk.length; }
+          } else {
+            console.warn('DecompressionStream not available, asset ' + uuid + ' may not render');
+          }
+        }
+
+        blobUrls[uuid] = URL.createObjectURL(new Blob([finalBytes], { type: entry.mime }));
+      } catch (err) {
+        console.error('Failed to decode asset ' + uuid + ':', err);
+        blobUrls[uuid] = URL.createObjectURL(new Blob([], { type: entry.mime }));
+      }
+    }));
+
+    const extResEl = document.querySelector('script[type="__bundler/ext_resources"]');
+    const extResources = extResEl ? JSON.parse(extResEl.textContent) : [];
+    const resourceMap = {};
+    for (const entry of extResources) {
+      if (blobUrls[entry.uuid]) resourceMap[entry.id] = blobUrls[entry.uuid];
+    }
+
+    setStatus('Rendering...');
+    for (const uuid of uuids) template = template.split(uuid).join(blobUrls[uuid]);
+
+    // Strip integrity + crossorigin — blob URLs from a file:// document inherit
+    // a null origin, so crossorigin forces a CORS fetch that SRI then rejects.
+    // The manifest bytes are ours; SRI protects against CDN compromise, not this.
+    template = template.replace(/\s+integrity="[^"]*"/gi, '').replace(/\s+crossorigin="[^"]*"/gi, '');
+
+    const resourceScript = '<script>window.__resources = ' +
+      JSON.stringify(resourceMap).split('</' + 'script>').join('<\\/' + 'script>') +
+      ';</' + 'script>';
+    // Inject after <head> so the DOCTYPE stays first; prepending the script
+    // would push the parser into quirks mode. DOMParser always emits a <head>
+    // (synthesizing one if the source HTML omitted it) but may carry
+    // attributes through, so match the full opening tag. slice() rather than
+    // replace() keeps us clear of $-pattern substitution in resourceScript.
+    const headOpen = template.match(/<head[^>]*>/i);
+    if (headOpen) {
+      const i = headOpen.index + headOpen[0].length;
+      template = template.slice(0, i) + resourceScript + template.slice(i);
+    }
+
+    // Parse the template and swap the root element. Scripts inserted via
+    // DOMParser/replaceWith are inert per spec — re-create each with
+    // createElement so they execute, awaiting onload for src scripts to
+    // preserve ordering (React before ReactDOM before Babel before text/babel).
+    const doc = new DOMParser().parseFromString(template, 'text/html');
+    document.documentElement.replaceWith(doc.documentElement);
+    const dead = Array.from(document.scripts);
+    for (const old of dead) {
+      const s = document.createElement('script');
+      for (const a of old.attributes) s.setAttribute(a.name, a.value);
+      s.textContent = old.textContent;
+      // text/babel scripts with a src: fetch and inline. transformScriptTags
+      // does XHR against the src, but blob:null/ from a file:// origin is
+      // silently dropped. Inlining makes it a plain inline babel script,
+      // which transformScriptTags handles unconditionally.
+      if ((s.type === 'text/babel' || s.type === 'text/jsx') && s.src) {
+        const r = await fetch(s.src);
+        s.textContent = await r.text();
+        s.removeAttribute('src');
+      }
+      const p = s.src ? new Promise(function(r) { s.onload = s.onerror = r; }) : null;
+      old.replaceWith(s);
+      if (p) await p;
+    }
+    // Babel standalone auto-transforms type=text/babel on DOMContentLoaded,
+    // which fired before we swapped the document. Trigger manually if present.
+    if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
+      window.Babel.transformScriptTags();
+    }
+  } catch (err) {
+    setStatus('Error unpacking: ' + err.message);
+    console.error('Bundle unpack error:', err);
+  }
+});
+
+  </script>
+
+  <script type="__bundler/manifest">
+{}
+  </script>
+
+  <script type="__bundler/ext_resources">
+[]
+  </script>
+
+  <script type="__bundler/template">
+"<!DOCTYPE html>\n<html lang=\"en\"><head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>EstimatIQ — Smart Estimates. Faster Deals.<\u002Ftitle>\n  <style>/* ================================================\n   CUSTOM PROPERTIES\n   ================================================ */\n:root {\n  /* Colors */\n  --color-bg:         #ffffff;\n  --color-bg-alt:     #f0f7ff;\n  --color-primary:    #1a2b4a;\n  --color-accent:     #0ea5e9;\n  --color-accent-dk:  #0284c7;\n  --color-text:       #1f2937;\n  --color-muted:      #6b7280;\n  --color-border:     #dde4ef;\n  --color-white:      #ffffff;\n  --color-code-bg:    #1e2d40;\n  --color-code-text:  #a8d8f0;\n\n  /* Typography */\n  --font-body: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial,\n               sans-serif;\n  --font-mono: \"Courier New\", Courier, monospace;\n\n  /* Spacing & shape */\n  --radius:     8px;\n  --shadow:     0 2px 8px rgba(0, 0, 0, 0.08);\n  --max-width:  1100px;\n}\n\n\n/* ================================================\n   RESET & BASE\n   ================================================ */\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: var(--font-body);\n  font-size: 1rem;\n  line-height: 1.7;\n  color: var(--color-text);\n  background-color: var(--color-bg);\n}\n\na {\n  color: var(--color-accent);\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\n\n/* ================================================\n   LAYOUT UTILITIES\n   ================================================ */\n\n/* Centered max-width container */\n.container {\n  max-width: var(--max-width);\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n}\n\n/* Section spacing */\n.section {\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n/* Alternating background */\n.section-alt {\n  background-color: var(--color-bg-alt);\n}\n\n/* Shared section heading */\n.section-title {\n  font-size: 2rem;\n  font-weight: 700;\n  color: var(--color-primary);\n  margin-bottom: 1.5rem;\n}\n\n/* Sub-headings inside sections (h3 used as section sub-titles) */\n.subsection-title {\n  font-size: 1.2rem;\n  font-weight: 700;\n  color: var(--color-primary);\n  margin-top: 2rem;\n  margin-bottom: 0.75rem;\n}\n\n\n/* ================================================\n   HEADER\n   ================================================ */\nheader {\n  background-color: var(--color-primary);\n  padding-top: 1rem;\n  padding-bottom: 1rem;\n  position: sticky;\n  top: 0;\n  z-index: 100;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);\n}\n\n.header-inner {\n  display: flex;\n  align-items: center;\n  gap: 1.5rem;\n  flex-wrap: wrap;\n}\n\n.logo {\n  font-size: 1.5rem;\n  font-weight: 700;\n  color: var(--color-white);\n  letter-spacing: -0.5px;\n  text-decoration: none;\n}\n\n.logo:hover {\n  color: var(--color-accent);\n  text-decoration: none;\n}\n\n.tagline {\n  font-size: 0.85rem;\n  color: rgba(255, 255, 255, 0.55);\n  flex: 1;\n}\n\n.nav-list {\n  list-style: none;\n  display: flex;\n  gap: 1.5rem;\n  flex-wrap: wrap;\n}\n\n.nav-list a {\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 0.9rem;\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.nav-list a:hover {\n  color: var(--color-accent);\n  text-decoration: none;\n}\n\n\n/* ================================================\n   BUTTONS\n   ================================================ */\n.btn {\n  display: inline-block;\n  padding: 0.75rem 1.75rem;\n  border-radius: var(--radius);\n  font-family: var(--font-body);\n  font-size: 1rem;\n  font-weight: 600;\n  text-decoration: none;\n  border: 2px solid transparent;\n  cursor: pointer;\n}\n\n.btn-primary {\n  background-color: var(--color-accent);\n  color: var(--color-white);\n  border-color: var(--color-accent);\n}\n\n.btn-primary:hover {\n  background-color: var(--color-accent-dk);\n  border-color: var(--color-accent-dk);\n  color: var(--color-white);\n  text-decoration: none;\n}\n\n.btn-outline {\n  background-color: transparent;\n  color: var(--color-primary);\n  border-color: var(--color-primary);\n}\n\n.btn-outline:hover {\n  background-color: var(--color-primary);\n  color: var(--color-white);\n  text-decoration: none;\n}\n\n\n/* ================================================\n   HERO\n   ================================================ */\n.hero {\n  background-color: var(--color-primary);\n  color: var(--color-white);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n  text-align: center;\n}\n\n.hero-inner {\n  max-width: 760px;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.hero h1 {\n  font-size: 2.75rem;\n  line-height: 1.2;\n  margin-bottom: 1.25rem;\n}\n\n.hero-text {\n  font-size: 1.15rem;\n  color: rgba(255, 255, 255, 0.78);\n  margin-bottom: 2rem;\n}\n\n\n/* ================================================\n   ABOUT\n   ================================================ */\n#about p {\n  margin-bottom: 1rem;\n}\n\n.about-list {\n  padding-left: 1.5rem;\n  margin-bottom: 1.5rem;\n}\n\n.about-list li {\n  margin-bottom: 0.4rem;\n}\n\n/* VP of Sales blockquote */\n.pull-quote {\n  border-left: 4px solid var(--color-accent);\n  padding: 1.25rem 1.5rem;\n  background-color: var(--color-bg-alt);\n  border-radius: 0 var(--radius) var(--radius) 0;\n  margin-top: 2rem;\n}\n\n.pull-quote p {\n  font-size: 1.1rem;\n  font-style: italic;\n  color: var(--color-primary);\n  margin-bottom: 0.6rem;\n}\n\n\n/* ================================================\n   ATTRIBUTION (used inside blockquotes)\n   ================================================ */\n.attribution {\n  font-size: 0.875rem;\n  color: var(--color-muted);\n  font-style: normal;\n  margin-bottom: 0;\n}\n\n\n/* ================================================\n   HOW IT WORKS\n   ================================================ */\n.steps-list {\n  list-style: none;\n  padding: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 2.5rem;\n}\n\n.step-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 1.5rem;\n}\n\n.step-number {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 3rem;\n  height: 3rem;\n  background-color: var(--color-accent);\n  color: var(--color-white);\n  font-size: 1.25rem;\n  font-weight: 700;\n  border-radius: 50%;\n  flex-shrink: 0;\n}\n\n.step-body h3 {\n  font-size: 1.15rem;\n  color: var(--color-primary);\n  margin-bottom: 0.4rem;\n}\n\n\n/* ================================================\n   CARD (shared base — features & pricing)\n   ================================================ */\n.card {\n  background-color: var(--color-white);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius);\n  padding: 1.75rem;\n  box-shadow: var(--shadow);\n}\n\n.card h3 {\n  font-size: 1.05rem;\n  color: var(--color-primary);\n  margin-bottom: 0.6rem;\n}\n\n\n/* ================================================\n   FEATURE CARD GRID\n   ================================================ */\n.card-grid {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n  justify-content: flex-start;\n}\n\n/* Each card takes roughly one-third width, min 240px */\n.card-grid .card {\n  flex: 1 1 calc(33.333% - 1.5rem);\n  min-width: 240px;\n}\n\n\n/* ================================================\n   SAMPLE API RESPONSE\n   ================================================ */\n#api-sample p {\n  margin-bottom: 1.25rem;\n}\n\npre {\n  background-color: var(--color-code-bg);\n  color: var(--color-code-text);\n  padding: 1.5rem;\n  border-radius: var(--radius);\n  overflow-x: auto;\n  font-family: var(--font-mono);\n  font-size: 0.875rem;\n  line-height: 1.65;\n}\n\ncode {\n  font-family: var(--font-mono);\n}\n\n\n/* ================================================\n   PRICING CARDS\n   ================================================ */\n.pricing-grid {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n  justify-content: center;\n  align-items: flex-start;\n}\n\n.pricing-card {\n  flex: 1 1 280px;\n  max-width: 340px;\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n\n/* Highlighted / featured plan */\n.pricing-featured {\n  border-color: var(--color-accent);\n  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.18);\n}\n\n.badge {\n  display: inline-block;\n  background-color: var(--color-accent);\n  color: var(--color-white);\n  font-size: 0.72rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  padding: 0.2rem 0.65rem;\n  border-radius: 999px;\n  width: fit-content;\n}\n\n.price {\n  font-size: 2rem;\n  font-weight: 700;\n  color: var(--color-primary);\n}\n\n.price-period {\n  font-size: 1rem;\n  font-weight: 400;\n  color: var(--color-muted);\n}\n\n/* Feature checklist inside pricing cards */\n.feature-list {\n  list-style: none;\n  padding: 0;\n  flex: 1;\n}\n\n.feature-list li {\n  padding: 0.45rem 0;\n  border-bottom: 1px solid var(--color-border);\n  font-size: 0.94rem;\n}\n\n.feature-list li::before {\n  content: \"✓  \";\n  color: var(--color-accent);\n  font-weight: 700;\n}\n\n/* Make CTA button full-width inside a pricing card */\n.pricing-card .btn {\n  text-align: center;\n  width: 100%;\n}\n\n\n/* ================================================\n   TESTIMONIALS\n   ================================================ */\n.testimonial-grid {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n}\n\n.testimonial {\n  flex: 1 1 280px;\n  background-color: var(--color-white);\n  border-left: 4px solid var(--color-accent);\n  border-radius: 0 var(--radius) var(--radius) 0;\n  padding: 1.5rem;\n  box-shadow: var(--shadow);\n}\n\n.testimonial p {\n  font-style: italic;\n  color: var(--color-primary);\n  margin-bottom: 0.75rem;\n}\n\n\n/* ================================================\n   FAQ\n   ================================================ */\n.faq-list {\n  display: flex;\n  flex-direction: column;\n  gap: 1.75rem;\n}\n\n.faq-list dt {\n  font-weight: 700;\n  font-size: 1.05rem;\n  color: var(--color-primary);\n  margin-bottom: 0.4rem;\n}\n\n.faq-list dd {\n  margin-left: 0;\n  line-height: 1.75;\n}\n\n\n/* ================================================\n   CONTACT FORM\n   ================================================ */\n.form-intro {\n  margin-bottom: 2rem;\n}\n\n.contact-form {\n  max-width: 620px;\n  display: flex;\n  flex-direction: column;\n  gap: 1.25rem;\n}\n\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 0.35rem;\n}\n\n.form-group label {\n  font-weight: 600;\n  font-size: 0.9rem;\n  color: var(--color-primary);\n}\n\n.form-group input,\n.form-group select,\n.form-group textarea {\n  padding: 0.65rem 0.9rem;\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius);\n  font-family: var(--font-body);\n  font-size: 1rem;\n  color: var(--color-text);\n  background-color: var(--color-white);\n}\n\n.form-group input:focus,\n.form-group select:focus,\n.form-group textarea:focus {\n  outline: none;\n  border-color: var(--color-accent);\n  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);\n}\n\n.form-group textarea {\n  resize: vertical;\n}\n\n\n/* ================================================\n   FOOTER\n   ================================================ */\nfooter {\n  background-color: var(--color-primary);\n  color: rgba(255, 255, 255, 0.65);\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n\n.footer-inner {\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n\n.footer-logo {\n  font-size: 1.3rem;\n  font-weight: 700;\n  color: var(--color-white);\n  margin-bottom: 0.5rem;\n}\n\n.footer-brand address {\n  font-style: normal;\n  font-size: 0.9rem;\n  line-height: 1.7;\n}\n\n.footer-brand a {\n  color: var(--color-accent);\n}\n\n.footer-nav {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.25rem;\n}\n\n.footer-nav a {\n  color: rgba(255, 255, 255, 0.6);\n  font-size: 0.875rem;\n  text-decoration: none;\n}\n\n.footer-nav a:hover {\n  color: var(--color-white);\n  text-decoration: underline;\n}\n\n.copyright {\n  font-size: 0.8rem;\n  color: rgba(255, 255, 255, 0.35);\n}\n<\u002Fstyle>\n  \n<\u002Fhead>\n<body>\n\n  <!-- ============================\n       HEADER\n       ============================ -->\n  <header>\n    <div class=\"container header-inner\">\n      <a class=\"logo\" href=\"#\">EstimatIQ<\u002Fa>\n      <p class=\"tagline\">Smart Estimates. Faster Deals.<\u002Fp>\n      <nav>\n        <ul class=\"nav-list\">\n          <li><a href=\"#about\">About<\u002Fa><\u002Fli>\n          <li><a href=\"#how-it-works\">How It Works<\u002Fa><\u002Fli>\n          <li><a href=\"#features\">Features<\u002Fa><\u002Fli>\n          <li><a href=\"#pricing\">Pricing<\u002Fa><\u002Fli>\n          <li><a href=\"#faq\">FAQ<\u002Fa><\u002Fli>\n          <li><a href=\"#contact\">Contact<\u002Fa><\u002Fli>\n        <\u002Ful>\n      <\u002Fnav>\n    <\u002Fdiv>\n  <\u002Fheader>\n\n  <main>\n\n    <!-- ============================\n         HERO\n         ============================ -->\n    <section id=\"hero\" class=\"hero\">\n      <div class=\"container hero-inner\">\n        <h1>Turn Project Descriptions into Winning Estimates — Instantly<\u002Fh1>\n        <p class=\"hero-text\">\n          EstimatIQ uses AI to transform rough project briefs into detailed, accurate\n          estimates in seconds. Stop losing deals to slow turnaround — give your sales\n          team an unfair advantage and close more business, faster.\n        <\u002Fp>\n        <a href=\"#contact\" class=\"btn btn-primary\">Request a Free Demo<\u002Fa>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         ABOUT\n         ============================ -->\n    <section id=\"about\" class=\"section\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">What is EstimatIQ?<\u002Fh2>\n        <p>\n          EstimatIQ is an AI-powered project estimation platform built for sales teams.\n          Paste in a client's project description and our engine returns a detailed,\n          scope-aware estimate — broken down by phase, hours, and cost — in under\n          10 seconds. No spreadsheets. No back-and-forth with engineering.\n        <\u002Fp>\n\n        <h3 class=\"subsection-title\">Who Is It For?<\u002Fh3>\n        <ul class=\"about-list\">\n          <li>Sales engineers closing complex technical deals<\u002Fli>\n          <li>Account executives who need fast, credible quotes<\u002Fli>\n          <li>Agencies and consultancies scoping client projects<\u002Fli>\n          <li>Pre-sales teams at SaaS and professional-services companies<\u002Fli>\n          <li>Freelancers and small studios estimating custom work<\u002Fli>\n        <\u002Ful>\n\n        <h3 class=\"subsection-title\">The Problem We Solve<\u002Fh3>\n        <p>\n          Getting an accurate project estimate used to take days — back-and-forth with\n          technical teams, endless spreadsheets, and gut-feel guesswork. By the time\n          your quote arrived, the prospect had already moved on. EstimatIQ eliminates\n          that lag entirely.\n        <\u002Fp>\n\n        <blockquote class=\"pull-quote\">\n          <p>\n            \"We were losing deals because our estimates took 3–5 business days.\n            EstimatIQ brought that down to 30 seconds. Our close rate jumped 22%\n            in the first quarter.\"\n          <\u002Fp>\n          <p class=\"attribution\">— Sarah Chen, VP of Sales, NovaBridge Solutions<\u002Fp>\n        <\u002Fblockquote>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         HOW IT WORKS\n         ============================ -->\n    <section id=\"how-it-works\" class=\"section section-alt\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">How It Works<\u002Fh2>\n        <ol class=\"steps-list\">\n\n          <li class=\"step-item\">\n            <span class=\"step-number\">1<\u002Fspan>\n            <div class=\"step-body\">\n              <h3>Describe<\u002Fh3>\n              <p>\n                Paste or type your client's project description into EstimatIQ.\n                Plain language works perfectly — no structured input or templates required.\n              <\u002Fp>\n            <\u002Fdiv>\n          <\u002Fli>\n\n          <li class=\"step-item\">\n            <span class=\"step-number\">2<\u002Fspan>\n            <div class=\"step-body\">\n              <h3>Analyze<\u002Fh3>\n              <p>\n                Our AI engine breaks the description into discrete workstreams, assigns\n                complexity levels, and calculates hours and costs per phase using your\n                team's own rate card.\n              <\u002Fp>\n            <\u002Fdiv>\n          <\u002Fli>\n\n          <li class=\"step-item\">\n            <span class=\"step-number\">3<\u002Fspan>\n            <div class=\"step-body\">\n              <h3>Review &amp; Export<\u002Fh3>\n              <p>\n                View the structured estimate, adjust any line items inline, then export\n                to PDF, Excel, or push directly to your CRM — ready to send to the client.\n              <\u002Fp>\n            <\u002Fdiv>\n          <\u002Fli>\n\n        <\u002Fol>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         KEY FEATURES\n         ============================ -->\n    <section id=\"features\" class=\"section\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">Key Features<\u002Fh2>\n        <div class=\"card-grid\">\n\n          <article class=\"card\">\n            <h3>AI-Powered Scoping<\u002Fh3>\n            <p>\n              Understands technical and non-technical project briefs. Identifies hidden\n              complexity before it bites your margin.\n            <\u002Fp>\n          <\u002Farticle>\n\n          <article class=\"card\">\n            <h3>Custom Rate Cards<\u002Fh3>\n            <p>\n              Upload your team's hourly rates and EstimatIQ applies them automatically\n              to every phase, role, and deliverable.\n            <\u002Fp>\n          <\u002Farticle>\n\n          <article class=\"card\">\n            <h3>CRM Integration<\u002Fh3>\n            <p>\n              Push estimates directly to Salesforce, HubSpot, and Pipedrive.\n              One click — no copy-pasting between tabs.\n            <\u002Fp>\n          <\u002Farticle>\n\n          <article class=\"card\">\n            <h3>Version History<\u002Fh3>\n            <p>\n              Every estimate is saved and versioned. Compare revisions, see what changed,\n              and revert anytime without losing work.\n            <\u002Fp>\n          <\u002Farticle>\n\n          <article class=\"card\">\n            <h3>Team Collaboration<\u002Fh3>\n            <p>\n              Invite technical leads to review and adjust estimates inline. Comments,\n              suggestions, and approvals — all in one place.\n            <\u002Fp>\n          <\u002Farticle>\n\n          <article class=\"card\">\n            <h3>Export Anywhere<\u002Fh3>\n            <p>\n              Download as PDF, XLSX, or JSON. Branded templates for client-facing docs;\n              raw data for internal analysis.\n            <\u002Fp>\n          <\u002Farticle>\n\n        <\u002Fdiv>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         SAMPLE API RESPONSE\n         ============================ -->\n    <section id=\"api-sample\" class=\"section section-alt\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">Sample API Response<\u002Fh2>\n        <p>\n          EstimatIQ ships a REST API for teams who want to embed estimation directly\n          into their own tools and workflows. Here is an example response:\n        <\u002Fp>\n        <pre><code>{\n  \"estimate_id\": \"EST-20240615-001\",\n  \"project\": \"E-commerce Platform Rebuild\",\n  \"generated_at\": \"2024-06-15T14:32:00Z\",\n  \"phases\": [\n    { \"name\": \"Discovery and Planning\",  \"hours\": 40,  \"cost\": 6000  },\n    { \"name\": \"Design and Prototyping\",  \"hours\": 80,  \"cost\": 12000 },\n    { \"name\": \"Development\",             \"hours\": 320, \"cost\": 48000 },\n    { \"name\": \"Testing and QA\",          \"hours\": 60,  \"cost\": 9000  },\n    { \"name\": \"Deployment and Handoff\",  \"hours\": 20,  \"cost\": 3000  }\n  ],\n  \"total_hours\": 520,\n  \"total_cost\": 78000,\n  \"confidence\": \"high\",\n  \"currency\": \"USD\",\n  \"notes\": \"Assumes React frontend, Node.js backend, AWS hosting.\"\n}<\u002Fcode><\u002Fpre>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         PRICING\n         ============================ -->\n    <section id=\"pricing\" class=\"section\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">Pricing<\u002Fh2>\n        <div class=\"pricing-grid\">\n\n          <article class=\"card pricing-card\">\n            <h3>Starter<\u002Fh3>\n            <p class=\"price\">$49 <span class=\"price-period\">/month<\u002Fspan><\u002Fp>\n            <ul class=\"feature-list\">\n              <li>Up to 50 estimates per month<\u002Fli>\n              <li>1 user seat<\u002Fli>\n              <li>PDF and Excel export<\u002Fli>\n              <li>Email support<\u002Fli>\n            <\u002Ful>\n            <a href=\"#contact\" class=\"btn btn-outline\">Get Started<\u002Fa>\n          <\u002Farticle>\n\n          <article class=\"card pricing-card pricing-featured\">\n            <span class=\"badge\">Most Popular<\u002Fspan>\n            <h3>Growth<\u002Fh3>\n            <p class=\"price\">$149 <span class=\"price-period\">/month<\u002Fspan><\u002Fp>\n            <ul class=\"feature-list\">\n              <li>Unlimited estimates<\u002Fli>\n              <li>Up to 10 user seats<\u002Fli>\n              <li>CRM integrations<\u002Fli>\n              <li>Custom rate cards<\u002Fli>\n              <li>Version history<\u002Fli>\n              <li>Priority support<\u002Fli>\n            <\u002Ful>\n            <a href=\"#contact\" class=\"btn btn-primary\">Get Started<\u002Fa>\n          <\u002Farticle>\n\n          <article class=\"card pricing-card\">\n            <h3>Enterprise<\u002Fh3>\n            <p class=\"price\">Custom<\u002Fp>\n            <ul class=\"feature-list\">\n              <li>Unlimited everything<\u002Fli>\n              <li>Unlimited seats<\u002Fli>\n              <li>Full API access<\u002Fli>\n              <li>SSO and audit logs<\u002Fli>\n              <li>Dedicated customer success manager<\u002Fli>\n              <li>SLA guarantee<\u002Fli>\n            <\u002Ful>\n            <a href=\"#contact\" class=\"btn btn-outline\">Contact Sales<\u002Fa>\n          <\u002Farticle>\n\n        <\u002Fdiv>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         TESTIMONIALS\n         ============================ -->\n    <section id=\"testimonials\" class=\"section section-alt\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">What Our Customers Say<\u002Fh2>\n        <div class=\"testimonial-grid\">\n\n          <blockquote class=\"testimonial\">\n            <p>\n              \"EstimatIQ cut our scoping meetings in half. Clients used to wait a week\n              for a quote. Now they get it before the call ends.\"\n            <\u002Fp>\n            <p class=\"attribution\">— Marcus Rivera, Director of Sales Engineering, CloudPeak Inc.<\u002Fp>\n          <\u002Fblockquote>\n\n          <blockquote class=\"testimonial\">\n            <p>\n              \"The CRM integration alone was worth the price. Our reps stopped playing\n              copy-paste games and our pipeline data is finally accurate.\"\n            <\u002Fp>\n            <p class=\"attribution\">— Priya Nair, Revenue Operations Lead, Tapestry Digital<\u002Fp>\n          <\u002Fblockquote>\n\n          <blockquote class=\"testimonial\">\n            <p>\n              \"I was skeptical AI could handle the nuance of our custom dev projects.\n              After two weeks, I was a convert. The estimates are genuinely good.\"\n            <\u002Fp>\n            <p class=\"attribution\">— Tom Okafor, Managing Director, Fieldstone Studio<\u002Fp>\n          <\u002Fblockquote>\n\n        <\u002Fdiv>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         FAQ\n         ============================ -->\n    <section id=\"faq\" class=\"section\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">Frequently Asked Questions<\u002Fh2>\n        <dl class=\"faq-list\">\n\n          <dt>How accurate are EstimatIQ's estimates?<\u002Fdt>\n          <dd>\n            Our estimates are accurate within ±15% for most standard project types.\n            Accuracy improves the more context you provide — team size, technology stack,\n            and known constraints all help the AI scope more precisely.\n          <\u002Fdd>\n\n          <dt>Can I use my own billing rates?<\u002Fdt>\n          <dd>\n            Yes. You can upload a custom rate card for any number of roles (designer,\n            developer, PM, QA, etc.) and EstimatIQ will apply your rates to every future\n            estimate automatically.\n          <\u002Fdd>\n\n          <dt>Does EstimatIQ integrate with my CRM?<\u002Fdt>\n          <dd>\n            We support native integrations with Salesforce, HubSpot, and Pipedrive on the\n            Growth and Enterprise plans. Our REST API lets you connect any other system\n            on the Enterprise plan.\n          <\u002Fdd>\n\n          <dt>Is my data secure?<\u002Fdt>\n          <dd>\n            All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We are\n            SOC 2 Type II certified and GDPR-compliant. We never use your project data\n            to train our models without explicit opt-in.\n          <\u002Fdd>\n\n        <\u002Fdl>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n    <!-- ============================\n         CONTACT / DEMO FORM\n         ============================ -->\n    <section id=\"contact\" class=\"section section-alt\">\n      <div class=\"container\">\n        <h2 class=\"section-title\">Request a Free Demo<\u002Fh2>\n        <p class=\"form-intro\">\n          See EstimatIQ in action with your own project data. Fill out the form below\n          and we will reach out within one business day.\n        <\u002Fp>\n        <form class=\"contact-form\" action=\"#\" method=\"post\">\n\n          <div class=\"form-group\">\n            <label for=\"full-name\">Full Name<\u002Flabel>\n            <input type=\"text\" id=\"full-name\" name=\"full-name\" placeholder=\"Jane Smith\" required=\"\">\n          <\u002Fdiv>\n\n          <div class=\"form-group\">\n            <label for=\"work-email\">Work Email<\u002Flabel>\n            <input type=\"email\" id=\"work-email\" name=\"work-email\" placeholder=\"jane@company.com\" required=\"\">\n          <\u002Fdiv>\n\n          <div class=\"form-group\">\n            <label for=\"company\">Company<\u002Flabel>\n            <input type=\"text\" id=\"company\" name=\"company\" placeholder=\"Acme Corp\">\n          <\u002Fdiv>\n\n          <div class=\"form-group\">\n            <label for=\"team-size\">Sales Team Size<\u002Flabel>\n            <select id=\"team-size\" name=\"team-size\">\n              <option value=\"\">— Select —<\u002Foption>\n              <option value=\"1-5\">1–5 reps<\u002Foption>\n              <option value=\"6-20\">6–20 reps<\u002Foption>\n              <option value=\"21-50\">21–50 reps<\u002Foption>\n              <option value=\"51-200\">51–200 reps<\u002Foption>\n              <option value=\"200+\">200+ reps<\u002Foption>\n            <\u002Fselect>\n          <\u002Fdiv>\n\n          <div class=\"form-group\">\n            <label for=\"project-details\">Tell us about your project<\u002Flabel>\n            <textarea id=\"project-details\" name=\"project-details\" rows=\"5\" placeholder=\"Describe a recent deal or project type you'd like to estimate…\"><\u002Ftextarea>\n          <\u002Fdiv>\n\n          <button type=\"submit\" class=\"btn btn-primary\">Send My Request<\u002Fbutton>\n\n        <\u002Fform>\n      <\u002Fdiv>\n    <\u002Fsection>\n\n  <\u002Fmain>\n\n  <!-- ============================\n       FOOTER\n       ============================ -->\n  <footer>\n    <div class=\"container footer-inner\">\n\n      <div class=\"footer-brand\">\n        <p class=\"footer-logo\">EstimatIQ<\u002Fp>\n        <address>\n          350 Market Street, Suite 1200<br>\n          San Francisco, CA 94105\n        <\u002Faddress>\n        <p><a href=\"mailto:hello@estimatiq.com\">hello@estimatiq.com<\u002Fa><\u002Fp>\n        <p>+1 (415) 555-0192<\u002Fp>\n      <\u002Fdiv>\n\n      <nav class=\"footer-nav\" aria-label=\"Footer navigation\">\n        <a href=\"#\">Privacy Policy<\u002Fa>\n        <a href=\"#\">Terms of Service<\u002Fa>\n        <a href=\"#\">Cookie Policy<\u002Fa>\n        <a href=\"#\">Security<\u002Fa>\n      <\u002Fnav>\n\n      <p class=\"copyright\">© 2024 EstimatIQ, Inc. All rights reserved.<\u002Fp>\n\n    <\u002Fdiv>\n  <\u002Ffooter>\n\n\n\n<\u002Fbody><\u002Fhtml>"
+  </script>
+</body>
+</html>
